@@ -153,11 +153,9 @@ module.exports = function webflowPlugin(){
 			while(origin[origin.length - 1] === `/`){
 				origin = origin.substring(0, origin.length - 1)
 			}
-			else{
-				const template = await readFile(join(__dirname, `_redirects.template`), `utf8`)
-				let redirectsData = template.replace(/{{domain}}/g, origin)
-				await outputFile(join(dist, `_redirects`), redirectsData)
-			}
+			const template = await readFile(join(__dirname, `_redirects.template`), `utf8`)
+			let redirectsData = template.replace(/{{domain}}/g, origin)
+			await outputFile(join(dist, `_redirects`), redirectsData)
 
 		})
 	}
