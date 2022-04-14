@@ -50,18 +50,30 @@ module.exports = function webflowPlugin(){
 				$html.attr(`lang`, `en`)
 			}
 
-			// Removes the "Powered by Webflow" link
+			// Remove generator meta
+			$head.find(`meta[name="generator"]`).remove()
+			$head.append(`<meta name="generator" content="Project Lloyd" data-url="https://github.com/well-made-uk/project-lloyd"`)
+
+			// Remove Webflow mess
+			$html.find(`style:nth-child(1)`).remove()
+			$html.removeAttr("data-wf-page")
+			$html.removeAttr("data-wf-site")
+			$html.removeAttr("data-wf-status")
+			$html.removeAttr("class")
 			$html.removeAttr(`data-wf-domain`)
 			$html.append(`<style>.w-webflow-badge {display:none!important}</style>`)
 
-			// Remove generator meta
-			$head.find(`meta[name="generator"]`).remove()
-			$head.append(`<meta name="generator" content="Project Lloyd"`)
-
 			// Add Analytics
-			if (process.env.URL) {
+			if (process.env.plausible) {
 				$head.append(`<script defer data-domain="` + target + `" src="https://plausible.io/js/plausible.js"></script>`)
 			}
+
+			$('*').each((i, el) => {
+				const $el = $(el)
+				if( $el.nodeType === 8 ) {
+				  $el.remove()
+				}
+			})
 
 			// Fix cross-origin links
 			$(`a`).each((i, el) => {
