@@ -1,11 +1,10 @@
 # Project Lloyd
 
-Version: 1.0.1
+Version: 1.0.2
 
 Lloyd is a generator that converts a Webflow website into a static site by scraping any content found from the origin. Postprocessing is done to perform optimizations on the downloaded content:
 
 - Prettify URLs
-- Prepare for Plausible
 - Minify and bundle all Webflow CSS and JS
 - Optimise images
 - Optimise and subset font files
