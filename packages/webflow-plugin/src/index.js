@@ -50,12 +50,12 @@ module.exports = function webflowPlugin(){
 				$html.attr(`lang`, `en`)
 			}
 
-			// Remove generator meta
+			// Improve generator meta
 			$head.find(`meta[name="generator"]`).remove()
 			$head.append(`<meta name="generator" content="Project Lloyd" data-url="https://github.com/well-made-uk/project-lloyd"`)
 
 			// Remove Webflow mess
-			$html.find(`style:nth-child(1)`).remove()
+			$head.find(`style:nth-child(1)`).remove()
 			$html.removeAttr("data-wf-page")
 			$html.removeAttr("data-wf-site")
 			$html.removeAttr("data-wf-status")
@@ -68,6 +68,7 @@ module.exports = function webflowPlugin(){
 				$head.append(`<script defer data-domain="` + target + `" src="https://plausible.io/js/plausible.js"></script>`)
 			}
 
+			// Remove HTML comments
 			$('*').each((i, el) => {
 				const $el = $(el)
 				if( $el.nodeType === 8 ) {
