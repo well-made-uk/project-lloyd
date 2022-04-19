@@ -16,7 +16,7 @@ if(origin[origin.length - 1] !== `/`) {
 function toBool(str){
 	const type = typeof str
 	if(type === `boolean`) {
-		return str˜
+		return str
 	}
 	if(type === `string`) {
 		if(
