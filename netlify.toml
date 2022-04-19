@@ -12,11 +12,8 @@
 [template.environment]
   WEBFLOW_URL = ""
 
-# [[plugins]]
-# package = "netlify-plugin-subfont"
-
 [[plugins]]
-package = "netlify-plugin-image-optim"
+  package = "netlify-plugin-image-optim"
 
 [build.processing]
   skip_processing = false
