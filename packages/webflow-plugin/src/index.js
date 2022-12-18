@@ -49,6 +49,10 @@ module.exports = function webflowPlugin(){
 			if(!$html.attr(`lang`)){
 				$html.attr(`lang`, `en`)
 			}
+			
+			// Remove Webflow Branding
+			$html.append(`<style>.w-webflow-badge {display:none!important}</style>`)
+			$html.attr(`data-wf-domain`,target)
 /*
 			// Remove Webflow mess
 			$html.removeAttr("data-wf-page")
