@@ -108,7 +108,7 @@ module.exports = function webflowPlugin(){
 
 
 		})
-
+/*
 		// Need to output as `{{name}}.html` instead of `index.html` for pretty URLs
 		this.on(`writeFile`, async obj => {
 			const dist = this.dist
@@ -122,7 +122,7 @@ module.exports = function webflowPlugin(){
 				obj.outputPath = dist + parts.join(`/`) + `/` + dir + `.html`
 			}
 		})
-
+*/
 		this.on(`complete`, async () => {
 			const dist = this.dist
 			const PUBLISH_DIR = join(process.cwd(), dist)
