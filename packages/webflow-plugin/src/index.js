@@ -44,12 +44,12 @@ module.exports = function webflowPlugin(){
 			const $body = $(`body`)
 			const $head = $(`head`)
 			const $html = $(`html`)
-/*
+
 			// Add lang attrbute
 			if(!$html.attr(`lang`)){
 				$html.attr(`lang`, `en`)
 			}
-
+/*
 			// Remove Webflow mess
 			$html.removeAttr("data-wf-page")
 			$html.removeAttr("data-wf-site")
