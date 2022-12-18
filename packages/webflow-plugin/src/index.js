@@ -127,11 +127,11 @@ module.exports = function webflowPlugin(){
 			const PUBLISH_DIR = join(process.cwd(), dist)
 
 			// Create robots.txt if it doesn't exist
-			const newRobotsTxt = replaceRobotsTxt || !(await exists(join(dist, `robots.txt`)))
-			if (newRobotsTxt) {
+			/*const newRobotsTxt = replaceRobotsTxt || !(await exists(join(dist, `robots.txt`)))
+			if (newRobotsTxt) {*/
 				console.log(`Creating robots.txt...`)
 				await outputFile(join(dist, `robots.txt`), ``)
-			}
+			// }
 
 			// Remove excluded pages from sitemap
 			excludeFromSitemap = excludeFromSitemap.map(url => {
