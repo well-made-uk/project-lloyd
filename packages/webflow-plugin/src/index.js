@@ -53,7 +53,7 @@ module.exports = function webflowPlugin(){
 			// Remove Webflow Branding
 			$html.append(`<style>.w-webflow-badge {display:none!important}</style>`)
 			$html.attr(`data-wf-domain`,target)
-			$body.append('<script>$(".w-webflow-badge").remove()</script>')
+			$body.append('<script>Webflow = Webflow || [];Webflow.push($(".w-webflow-badge").remove())</script>')
 /*
 			// Remove Webflow mess
 			$html.removeAttr("data-wf-page")
