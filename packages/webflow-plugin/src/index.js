@@ -44,22 +44,16 @@ module.exports = function webflowPlugin(){
 			const $body = $(`body`)
 			const $head = $(`head`)
 			const $html = $(`html`)
-
+/*
 			// Add lang attrbute
 			if(!$html.attr(`lang`)){
 				$html.attr(`lang`, `en`)
 			}
 
-			// Improve generator meta
-			$head.find(`meta[name="generator"]`).remove()
-			$head.append(`<meta name="generator" content="Project Lloyd" data-url="https://github.com/well-made-uk/project-lloyd"`)
-
 			// Remove Webflow mess
-			$head.find(`style:nth-child(1)`).remove()
 			$html.removeAttr("data-wf-page")
 			$html.removeAttr("data-wf-site")
 			$html.removeAttr("data-wf-status")
-			$html.removeAttr("class")
 			$html.removeAttr(`data-wf-domain`)
 			$html.append(`<style>.w-webflow-badge {display:none!important}</style>`)
 
@@ -75,7 +69,7 @@ module.exports = function webflowPlugin(){
 				  $el.remove()
 				}
 			})
-
+*/
 			// Fix cross-origin links
 			$(`a`).each((i, el) => {
 				const $el = $(el)
