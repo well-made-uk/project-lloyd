@@ -160,7 +160,6 @@ module.exports = function webflowPlugin(){
 				await outputFile(xmlPath, newXml)
 			}
 
-
 			// Write redirects file
 			let origin = process.env.WEBFLOW_URL
 			while(origin[origin.length - 1] === `/`){

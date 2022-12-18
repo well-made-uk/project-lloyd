@@ -10,9 +10,7 @@
   incoming-hooks = ["Webflow"]
 
 [template.environment]
-  WEBFLOW_URL = "well-made.uk"
-[template.environment]
-  TARGET = "https://639f83e12c118d541d47f921--funny-eclair-07cf0b.netlify.app/"
+  WEBFLOW_URL = ""
 
 [[plugins]]
 package = "netlify-plugin-subfont"
