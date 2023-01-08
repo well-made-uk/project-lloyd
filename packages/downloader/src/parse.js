@@ -14,7 +14,11 @@ module.exports = async function parse(url){
 		}
 	}
 	const contentType = get(head, `headers.content-type`)
-
+	
+	// Remove disallowed characters
+	url.replace('#','')
+	url.replace('?','')
+	
 	// Parse XML
 	if(contentType.indexOf(`application/rss`) === 0 || contentType.indexOf(`application/xml`) === 0){
 		let result
